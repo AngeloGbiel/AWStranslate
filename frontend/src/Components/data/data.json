@@ -1,0 +1,13 @@
+{
+    "idiomas": [
+        {"codigo": "zn","idioma":"Chinês"},
+        {"codigo": "de","idioma":"Alemão"},
+        {"codigo": "ko","idioma":"Coreano"},
+        {"codigo": "es","idioma":"Espanhol"},
+        {"codigo": "fr","idioma":"Francês"},
+        {"codigo": "en","idioma":"Inglês"},
+        {"codigo": "it","idioma":"Italiano"},
+        {"codigo": "pt","idioma":"Portugues"},
+        {"codigo": "ru","idioma":"Russo"}
+    ]
+}
