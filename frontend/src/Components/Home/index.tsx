@@ -58,11 +58,21 @@ const HomeStyled = styled.div`
         .length{
           position: absolute;
           left: 44%;
-          top: 53%;
+          top: 57%;
           transform: translate(-50%,-50%);
           color: #797979;
         }
       }
+    }
+  }
+  @media (max-width: 650px){
+    .switch{
+      display: none;
+    }
+    .fields{
+      flex-direction: column;
+      margin: 1rem;
+      gap: 20px; 
     }
   }
 `;
@@ -210,7 +220,7 @@ const Home = () => {
                     onChange={addText}
                     value={text}
                     multiline
-                    rows={5}
+                    rows={6}
                     fullWidth
                   />
                   {/* <button>asd</button> */}
@@ -231,7 +241,7 @@ const Home = () => {
                     label={`${value.textField}`}
                     value={translatedText}
                     multiline
-                    rows={5}
+                    rows={6}
                     fullWidth
                   />
                 </div>
