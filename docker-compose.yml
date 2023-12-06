@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: translate
+    restart: always
+    ports:
+      - 80:4000
+    volumes:
+      - ./frontend/:/frontend

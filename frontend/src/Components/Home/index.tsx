@@ -54,25 +54,25 @@ const HomeStyled = styled.div`
     margin: 4rem;
     div {
       width: 100%;
-      .text{
-        .length{
+      .text {
+        .length {
           position: absolute;
           left: 44%;
           top: 57%;
-          transform: translate(-50%,-50%);
+          transform: translate(-50%, -50%);
           color: #797979;
         }
       }
     }
   }
-  @media (max-width: 650px){
-    .switch{
+  @media (max-width: 650px) {
+    .switch {
       display: none;
     }
-    .fields{
+    .fields {
       flex-direction: column;
       margin: 1rem;
-      gap: 20px; 
+      gap: 20px;
     }
   }
 `;
@@ -88,12 +88,12 @@ const Home = () => {
   );
   const [text, setText] = useState<string>("");
   const [translatedText, setTranslatedText] = useState<string>("");
-  const [textLength,setTextLength] = useState<number>();
-  const maxChar = 500
+  const [textLength, setTextLength] = useState<number>();
+  const maxChar = 500;
 
-  useEffect(()=>{
-    setTextLength(text.length)
-  }, [text])
+  useEffect(() => {
+    setTextLength(text.length);
+  }, [text]);
 
   // Função que chama a Api e traduz
   const translate = async () => {
@@ -132,8 +132,8 @@ const Home = () => {
     if (SourceLanguageCode != "auto") {
       const currentLanguage = [SourceLanguageCode, TargetLanguageCode];
       const currentText = [text, translatedText];
-      setTranslatedText(currentText[0])
-      setText(currentText[1])
+      setTranslatedText(currentText[0]);
+      setText(currentText[1]);
       setSourceLanguageCode(currentLanguage[1]);
       setTargetLanguageCode(currentLanguage[0]);
       localStorage.setItem(
@@ -147,13 +147,11 @@ const Home = () => {
     } else return;
   };
 
-  const addText = (e:ChangeEvent<HTMLInputElement>) =>{
+  const addText = (e: ChangeEvent<HTMLInputElement>) => {
     const newText: string = e.target.value;
-    if(newText.length > maxChar)
-      return
+    if (newText.length > maxChar) return;
     setText(newText);
-  }
-  
+  };
 
   // Array contendo dois objetos para compôr o frontend
   const fieldLength = [
@@ -213,7 +211,9 @@ const Home = () => {
               </div>
               {value.id == 1 ? (
                 <div className="text" style={{ marginTop: "1.5rem" }}>
-                  <p className="length">{textLength}/{maxChar}</p>
+                  <p className="length">
+                    {textLength}/{maxChar}
+                  </p>
                   <TextField
                     id="outlined-multiline-static"
                     label={`${value.textField}`}
